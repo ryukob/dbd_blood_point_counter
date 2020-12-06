@@ -1,4 +1,4 @@
-# dbd_bp_counter
+# dbd_bp_counter だよ
 
 > dbd web service
 
