@@ -1,28 +1,31 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <page-header/>
+    <hello-world/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import PageHeader from './components/PageHeader.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    PageHeader,
   }
 }
 </script>
 
-<style>
+
+    HelloWorld<style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 42px;
 }
 </style>
