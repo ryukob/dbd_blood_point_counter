@@ -11,12 +11,12 @@
 
 <script>
 export default {
-    name: 'PageHeader',
-    data () {
-        return {
-            ver_no: '0.0.1',
-        }
+  name: 'PageHeader',
+  data () {
+    return {
+      ver_no: '0.0.1'
     }
+  }
 }
 </script>
 
@@ -54,7 +54,7 @@ export default {
 .ver_text {
     color: #FFFFFF;
     line-height: 42px;
-    font-size: 12px; 
+    font-size: 12px;
 }
 
 </style>
