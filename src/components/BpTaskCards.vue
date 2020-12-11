@@ -1,7 +1,7 @@
 <template>
 <div>
     <div v-for="item in items" :key="item.message">
-        <div class="card1">
+        <div class="card1" v-bind:class="item.color">
             <div class=card-upper-text>{{item.message}}</div>
             <div class=card-lower-text>{{item.bp}}BP</div>
         </div>
@@ -15,9 +15,9 @@ export default {
     data () {
         return {
             items: [
-            { message: '40 Level : 3rd teachable perk unlock',bp: '420,521' },
-            { message: '35 Level : 2nd teachable perk unlock',bp: '198,213' },
-            { message: '30 Level : 1st teachable perk unlock',bp: '0' }
+            { message: '40 Level : 3rd teachable perk unlock',bp: '420,521' ,color: "red"},
+            { message: '35 Level : 2nd teachable perk unlock',bp: '198,213' ,color: "pale-red"},
+            { message: '30 Level : 1st teachable perk unlock',bp: '0' ,color: "light-red"}
             ]
         }
     } 
@@ -26,7 +26,6 @@ export default {
 
 <style>
     .card1{
-        background-color: #DE2829;
         padding: 8px;
         text-align: center;
         width: 320px;
@@ -49,5 +48,15 @@ export default {
         text-align: center;
         color: #FFFFFF;
         padding-top: 8px;
+    }
+
+    .red{
+        background-color: #DE2829;
+    }
+    .pale-red{
+        background-color: #F87071;
+    }
+    .light-red{
+        background-color: #EB8F8F;
     }
 </style>
