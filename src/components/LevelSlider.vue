@@ -1,0 +1,70 @@
+<template>
+  <div>
+      <div class="current-level" >
+          {{level}} Level
+      </div>
+      <div class="slider">
+          <input type="range" min="1" max="40" step="1" v-model="level">
+      </div>
+  </div>
+</template>
+
+<script>
+export default {
+    data(){
+        return{
+            level:1
+        }
+    }
+
+}
+</script>
+
+<style>
+    .current-level{
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    
+    input[type="range"] {
+        -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+        appearance: none;
+        cursor: pointer; /* カーソルを分かりやすく */
+        outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
+        height: 4px; /* バーの高さ */
+        width: 50%; /* バーの幅 */
+        background: #ffffff; /* バーの背景色 */
+        border-radius: 10px; /* バーの両端の丸み */
+        border: solid 3px #dff1ff; /* バー周囲の線 */
+    }
+
+    /* WebKit向けのつまみ */
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none; /*  🚩デフォルトのつまみのスタイルを解除 */
+        background: #DE2829; /* 背景色 */
+        width: 24px; /* 幅 */
+        height: 24px; /* 高さ */
+        border-radius: 50%; /* 円形に */
+        box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15); /* 影 */
+    }
+    /* Moz向けのつまみ */
+    input[type="range"]::-moz-range-thumb {
+    background: #DE2829; /* 背景色 */
+    width: 24px; /* 幅 */
+    height: 24px; /* 高さ */
+    border-radius: 50%; /* 円形に */
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15); /* 影 */
+    border: none; /* デフォルトの線を消す */
+    }
+    /* Firefoxで点線が周りに表示されてしまう問題の解消 */
+    input[type="range"]::-moz-focus-outer {
+    border: 0;
+    }
+    /* つまみをドラッグしているときのスタイル */
+    input[type="range"]:active::-webkit-slider-thumb {
+    box-shadow: 0px 5px 10px -2px rgba(0, 0, 0, 0.3);
+    }
+
+</style>
