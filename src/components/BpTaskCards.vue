@@ -10,17 +10,84 @@
 </template>
 
 <script>
+let BP_LIST = [
+    0,
+14000,
+13666,
+15333,
+16333,
+16666,
+17666,
+19000,
+26000,
+25666,
+25666,
+21333,
+22666,
+25666,
+29000,
+28666,
+27666,
+26333,
+28666,
+31333,
+30666,
+31000,
+29333,
+31333,
+31000,
+31333,
+32000,
+33000,
+34333,
+37333,
+37000,
+38333,
+36000,
+37000,
+37333,
+38000,
+39000,
+38666,
+39000,
+44666,
+46333,
+48333,
+44000,
+45000,
+48333,
+51666,
+54666,
+54333,
+54000,
+53000
+]
+
 export default {
     name: 'BpTaskCards',
     data () {
         return {
             items: [
-            { message: '40 Level : 3rd teachable perk unlock',bp: '420,521' ,color: "red"},
-            { message: '35 Level : 2nd teachable perk unlock',bp: '198,213' ,color: "pale-red"},
-            { message: '30 Level : 1st teachable perk unlock',bp: '0' ,color: "light-red"}
-            ]
+                { level:40, message: '40 Level : 3rd teachable perk unlock', bp: '0' , color: "red"},
+                { level:35, message: '35 Level : 2nd teachable perk unlock', bp: '0' , color: "pale-red"},
+                { level:30, message: '30 Level : 1st teachable perk unlock', bp: '0' , color: "light-red"}
+            ],
+            level: 35
+            
+        }            
+    } ,
+
+    mounted(){
+        for (let i = 0; i < 3; i++) {       
+            let tempBp = 0;
+            for (let j = this.level; j < this.items[i].level; j++){
+                    tempBp += BP_LIST[j];
+                }
+                this.items[i].bp = String(tempBp);
         }
-    } 
+    }
+
+
 }
 </script>
 
@@ -54,7 +121,7 @@ export default {
         background-color: #DE2829;
     }
     .pale-red{
-        background-color: #F87071;
+        background-color: #FD6D6D;
     }
     .light-red{
         background-color: #EB8F8F;
