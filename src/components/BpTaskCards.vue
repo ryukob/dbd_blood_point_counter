@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { SliderEvent } from '../SliderEvent.js'
+
 let BP_LIST = [
     0,
 14000,
@@ -78,12 +80,19 @@ export default {
     } ,
 
     mounted(){
-        for (let i = 0; i < 3; i++) {       
-            let tempBp = 0;
-            for (let j = this.level; j < this.items[i].level; j++){
-                    tempBp += BP_LIST[j];
-                }
-                this.items[i].bp = String(tempBp);
+        SliderEvent.$on('level-change',this.calcBP)     
+    },
+
+    methods: {
+        calcBP: function(level){
+            this.level = level;
+            for (let i = 0; i < 3; i++) {       
+                let tempBp = 0;
+                for (let j = this.level; j < this.items[i].level; j++){
+                        tempBp += BP_LIST[j];
+                    }
+                    this.items[i].bp = String(tempBp);
+            }
         }
     }
 
