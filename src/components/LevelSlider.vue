@@ -10,10 +10,18 @@
 </template>
 
 <script>
+import {SliderEvent} from '../SliderEvent.js'
+
 export default {
     data(){
         return{
             level:1
+        }
+    },
+
+    watch:{
+        level: function(val){
+                SliderEvent.$emit('level-change',val);
         }
     }
 
