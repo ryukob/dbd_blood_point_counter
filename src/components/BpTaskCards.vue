@@ -1,7 +1,7 @@
 <template>
 <div>
     <div v-for="item in items" :key="item.message">
-        <div class="card1" v-bind:class="item.color">
+        <div class="card1" v-bind:class="item.bp=='0' ? 'glay' : item.color">
             <div class=card-upper-text>{{item.message}}</div>
             <div class=card-lower-text>{{item.bp}}BP</div>
         </div>
@@ -74,13 +74,14 @@ export default {
                 { level:35, message: '35 Level : 2nd teachable perk unlock', bp: '0' , color: "pale-red"},
                 { level:30, message: '30 Level : 1st teachable perk unlock', bp: '0' , color: "light-red"}
             ],
-            level: 35
+            level: 1
             
         }            
     } ,
 
     mounted(){
-        SliderEvent.$on('level-change',this.calcBP)     
+        SliderEvent.$on('level-change',this.calcBP)
+        this.calcBP(this.level)  
     },
 
     methods: {
@@ -91,8 +92,9 @@ export default {
                 for (let j = this.level; j < this.items[i].level; j++){
                         tempBp += BP_LIST[j];
                     }
-                    this.items[i].bp = String(tempBp);
+                    this.items[i].bp = tempBp.toLocaleString();
             }
+
         }
     }
 
@@ -104,8 +106,7 @@ export default {
     .card1{
         padding: 8px;
         text-align: center;
-        width: 320px;
-        margin-bottom: 8px;
+        margin: 8px;
     }
 
     .card-upper-text{
@@ -134,5 +135,9 @@ export default {
     }
     .light-red{
         background-color: #EB8F8F;
+    }
+    
+    .glay{
+        background-color: #767575;
     }
 </style>
