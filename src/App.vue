@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <page-header/>
-    <level-slider/>
-    <bp-task-cards/>
+    <page-header/>    
+    <div class="contents">
+      <level-slider class="level-slider"/>
+      <bp-task-cards class="bp-task-cards"/>
+    </div>
   </div>
 </template>
 
@@ -29,7 +31,24 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 42px;
+  background-color: #2c3e50;
+}
+
+.contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /* padding: 126px; */
+  height: 100vh;
+}
+
+.level-slider { 
+  flex-basis: 30%; 
+}
+
+.bp-task-cards { 
+  flex-basis: 20%; 
+
 }
 </style>
