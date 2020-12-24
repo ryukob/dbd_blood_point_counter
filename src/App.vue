@@ -39,16 +39,14 @@ export default {
   justify-content: center;
   align-items: center;
   align-content: center;
-  /* padding: 126px; */
   height: 100vh;
+  flex-wrap: wrap-reverse;
 }
 
 .level-slider { 
-  flex-basis: 30%; 
+width: 320px;
 }
 
 .bp-task-cards { 
-  flex-basis: 20%; 
-
 }
 </style>

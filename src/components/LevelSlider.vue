@@ -42,10 +42,10 @@ export default {
         cursor: pointer; /* カーソルを分かりやすく */
         outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
         height: 4px; /* バーの高さ */
-        width: 50%; /* バーの幅 */
+        width: 80%; /* バーの幅 */
         background: #ffffff; /* バーの背景色 */
         border-radius: 10px; /* バーの両端の丸み */
-        border: solid 3px #dff1ff; /* バー周囲の線 */
+        border: solid 0px #dff1ff; /* バー周囲の線 */
     }
 
     /* WebKit向けのつまみ */
