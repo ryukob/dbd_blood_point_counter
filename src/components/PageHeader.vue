@@ -14,7 +14,7 @@ export default {
   name: 'PageHeader',
   data () {
     return {
-      ver_no: '0.0.1'
+      ver_no: '0.0.2'
     }
   }
 }
