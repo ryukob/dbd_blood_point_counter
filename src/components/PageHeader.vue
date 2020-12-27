@@ -1,7 +1,7 @@
 <template>
     <div class="page_header">
         <div class="left_header">
-            <div class="page_title">DbD BP Counter</div>
+            <div class="page_title">DbD BP Calculator</div>
         </div>
         <div class="right_header">
             <div class="ver_text">ver {{ver_no}}</div>
